@@ -1,0 +1,166 @@
+[2025-12-09 15:40:52.664] [I] [thread 1538570] [asr_ws_client.h:43 ASRWsClient] >>> construct ASRWsClient
+[2025-12-09 15:40:52.664] [I] [thread 1538570] [asr_ws_client.h:44 ASRWsClient] <<< construct ASRWsClient
+[2025-12-09 15:40:52.664] [I] [thread 1538570] [asr_ws_client.h:55 start] FunASR WebSocket Client Start
+[2025-12-09 15:40:52.667] [E] [thread 1538619] [asr_ws_client.h:119 onConnect] FunASR WebSocket Client Connect: Connection refused
+[2025-12-09 15:40:52.698] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:52.698] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:52.719] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:52.719] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:52.740] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:52.740] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:52.762] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:52.762] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:52.783] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:52.783] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:52.804] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:52.804] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:52.826] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:52.826] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:52.847] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:52.847] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:52.868] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:52.868] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:52.868] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:52.868] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:52.890] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:52.890] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:52.911] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:52.911] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:52.932] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:52.932] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:52.954] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:52.954] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:52.975] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:52.975] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:52.996] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:52.996] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:53.018] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:53.018] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:53.039] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:53.039] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:53.060] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:53.060] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:53.082] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:53.082] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:53.103] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:53.103] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:53.124] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:53.124] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:53.146] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:53.146] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:53.167] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:53.167] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:53.188] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:53.188] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:53.188] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:53.188] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:53.210] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:53.210] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:53.231] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:53.231] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:53.252] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:53.252] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:53.274] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:53.274] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:53.295] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:53.295] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:53.316] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:53.316] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:53.338] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:53.338] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:53.359] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:53.359] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:53.380] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:53.380] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:53.402] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:53.402] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:53.423] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:53.423] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:53.444] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:53.444] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:53.466] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:53.466] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:53.487] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:53.487] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:53.508] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:53.509] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:53.509] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:53.509] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:53.530] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:53.530] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:53.551] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:53.551] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:53.573] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:53.573] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:53.594] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:53.594] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:53.615] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:53.615] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:53.637] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:53.637] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:53.658] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:53.658] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:53.679] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:53.679] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:53.701] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:53.701] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:53.722] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:53.722] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:53.743] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:53.743] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:53.765] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:53.765] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:53.786] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:53.786] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:53.807] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:53.807] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:53.829] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:53.829] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:53.829] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:53.829] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:53.850] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:53.850] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:53.871] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:53.871] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:53.893] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:53.893] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:53.914] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:53.914] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:53.935] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:53.935] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:53.957] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:53.957] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:53.978] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:53.978] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:53.999] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:53.999] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:54.021] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:54.021] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:54.042] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:54.042] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:54.063] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:54.063] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:54.085] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:54.085] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:54.106] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:54.106] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:54.127] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:54.127] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:54.149] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:54.149] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:54.149] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:54.149] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:54.170] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:54.170] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:54.191] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:54.191] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:54.213] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:54.213] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:54.234] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:54.234] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:54.255] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:54.255] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:54.277] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:54.277] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
+[2025-12-09 15:40:54.298] [I] [thread 1538617] [main.cc:17 inputCallback] inputCallback
+[2025-12-09 15:40:54.298] [E] [thread 1538617] [asr_ws_client.h:87 send] FunASR WebSocket Client Send: WebSocket is not open
