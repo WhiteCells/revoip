@@ -19,19 +19,7 @@ set(SRC
     src/main.cc
 )
 
-option(VOIP_SSL "Enable SSL")
-option(FEATURE "Feature to build: REMINDER or ROBOT" "REMINDER")
-
-set(FEATURE "REMINDER")
-set(VOIP_SSL ON)
-set(CMAKE_BUILD_TYPE Debug)
-
 add_executable(${PROJECT_NAME} ${SRC})
-
-if(VOIP_SSL)
-    message(">>> target compile definition VOIP_SSL")
-    target_compile_definitions(${PROJECT_NAME} PRIVATE VOIP_SSL)
-endif()
 
 target_include_directories(${PROJECT_NAME} PRIVATE
     ${Boost_INCLUDE_DIRS}

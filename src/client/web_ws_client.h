@@ -7,10 +7,8 @@
 #include "../dialplan_queue.h"
 // #include "ws_interface.h"
 // #include "../agent_ws_client.h"
-#ifdef VOIP_SSL
 #include <boost/beast/ssl.hpp>
 #include <boost/asio/ssl.hpp>
-#endif
 #include <boost/beast.hpp>
 #include <boost/asio.hpp>
 #include <json/json.h>
@@ -23,9 +21,7 @@ namespace beast = boost::beast;
 namespace http = beast::http;
 namespace websocket = beast::websocket;
 namespace net = boost::asio;
-#ifdef VOIP_SSL
 namespace ssl = boost::asio::ssl;
-#endif
 using tcp = net::ip::tcp;
 
 class WebWsClient :
@@ -62,9 +58,7 @@ private:
 
     void on_connect(beast::error_code ec, tcp::resolver::results_type::endpoint_type endpoint);
 
-#ifdef VOIP_SSL
     void on_tls_handshake(beast::error_code ec);
-#endif
 
     void on_ws_handshake(beast::error_code ec);
 
@@ -75,12 +69,8 @@ private:
 private:
     std::unique_ptr<tcp::resolver> m_resolver;
 
-#ifdef VOIP_SSL
     std::unique_ptr<websocket::stream<beast::ssl_stream<beast::tcp_stream>>> m_ws;
     std::unique_ptr<ssl::context> m_ssl_ctx;
-#else
-    std::unique_ptr<websocket::stream<beast::tcp_stream>> m_ws;
-#endif
 
     beast::flat_buffer m_buffer;
     std::string m_host;

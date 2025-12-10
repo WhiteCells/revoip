@@ -53,8 +53,8 @@ public:
     void start()
     {
         LOG_INFO("FunASR WebSocket Client Start");
-        m_strand.emplace(m_ioc.get_executor());
-        m_resolver = std::make_unique<tcp::resolver>(m_ioc);
+        m_strand.emplace(net::make_strand(m_ioc));
+        m_resolver = std::make_unique<tcp::resolver>(*m_strand);
         ssl::context ssl_ctx(ssl::context::tls_client);
         ssl_ctx.set_verify_mode(ssl::verify_none); // todo
         ssl_ctx.load_verify_file(m_ssl_cert);
@@ -210,7 +210,7 @@ private:
             LOG_ERROR("FunASR WebSocket Client Write: {}", ec.message());
             return;
         }
-        LOG_INFO("FunASR WebSocket Client Write: {} bytes", bytes_transferred);
+        // LOG_INFO("FunASR WebSocket Client Write: {} bytes", bytes_transferred);
         doWrite();
     }
 

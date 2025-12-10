@@ -23,7 +23,7 @@ static int inputCallback(const void *inputBuffer, void *,
     int16_t *copy = new int16_t[framesPerBuffer];
     std::memcpy(copy, input, framesPerBuffer * sizeof(int16_t));
 
-    asr_ws_client->send(std::string(reinterpret_cast<const char *>(copy)), true);
+    asr_ws_client->send(std::string(reinterpret_cast<const char *>(copy), framesPerBuffer * sizeof(int16_t)), true);
 
     // input_que.push(copy, framesPerBuffer * sizeof(int16_t));
 
@@ -66,8 +66,8 @@ int main(int argc, char *argv[])
 
     net::io_context ioc;
     asr_ws_client = std::make_shared<ASRWsClient>(ioc,
-                                                  "192.168.2.3",
-                                                  "51805",
+                                                  "192.168.10.5",
+                                                  "8080",
                                                   "/",
                                                   true,
                                                   "asr-server.crt");

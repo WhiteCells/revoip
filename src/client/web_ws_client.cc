@@ -201,14 +201,10 @@ void WebWsClient::start()
 {
     auto &ioc = IOContextPool::getInstance()->getIOContext();
     m_resolver = std::make_unique<tcp::resolver>(net::make_strand(ioc));
-#ifdef VOIP_SSL
     m_ssl_ctx = std::make_unique<ssl::context>(ssl::context::tls_client);
     m_ssl_ctx->set_verify_mode(ssl::verify_peer);
     m_ssl_ctx->load_verify_file("backend_verify_file");
     m_ws = std::make_unique<websocket::stream<beast::ssl_stream<beast::tcp_stream>>>(net::make_strand(ioc), *m_ssl_ctx);
-#else
-    m_ws = std::make_unique<websocket::stream<beast::tcp_stream>>(net::make_strand(ioc));
-#endif
     // m_resolver->async_resolve(g_gui_cfg.gui_host,
     //                           g_gui_cfg.gui_port,
     //                           beast::bind_front_handler(&WebWsClient::on_resolver,
@@ -372,19 +368,11 @@ void WebWsClient::on_connect(beast::error_code ec, tcp::resolver::results_type::
     }));
     // m_host = g_gui_cfg.gui_host + ":" + std::to_string(endpoint.port());
     // m_target = g_gui_cfg.gui_target + "/" + g_gui_cfg.gui_client_id;
-
-#ifdef VOIP_SSL
     m_ws->next_layer().async_handshake(ssl::stream_base::client,
                                        beast::bind_front_handler(&WebWsClient::on_tls_handshake,
                                                                  shared_from_this()));
-#else
-    m_ws->async_handshake(m_host, m_target,
-                          beast::bind_front_handler(&WebWsClient::on_ws_handshake,
-                                                    shared_from_this()));
-#endif
 }
 
-#ifdef VOIP_SSL
 void WebWsClient::on_tls_handshake(beast::error_code ec)
 {
     if (ec) {
@@ -407,7 +395,6 @@ void WebWsClient::on_tls_handshake(beast::error_code ec)
                           beast::bind_front_handler(&WebWsClient::on_ws_handshake,
                                                     shared_from_this()));
 }
-#endif
 
 void WebWsClient::on_ws_handshake(beast::error_code ec)
 {
