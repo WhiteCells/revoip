@@ -1,4 +1,0 @@
-[2025-12-09 17:25:26.992] [I] [thread 111813] [asr_ws_client.h:43 ASRWsClient] >>> construct ASRWsClient
-[2025-12-09 17:25:26.992] [I] [thread 111813] [asr_ws_client.h:44 ASRWsClient] <<< construct ASRWsClient
-[2025-12-09 17:25:26.992] [I] [thread 111813] [asr_ws_client.h:55 start] FunASR WebSocket Client Start
-[2025-12-09 17:25:26.994] [I] [thread 111837] [asr_ws_client.h:122 onConnect] FunASR WebSocket Client Connect: 192.168.2.3:51805
