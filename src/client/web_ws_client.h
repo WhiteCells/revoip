@@ -33,13 +33,15 @@ public:
     WebWsClient();
     ~WebWsClient() = default;
 
-    void set_server_sender(std::shared_ptr<IWSSender> sender);
+    // void set_server_sender(std::shared_ptr<IWSSender> sender);
 
     void set_agent_ws_sender(AgentWsMsgHandler handler);
 
     void restart();
 
-    void start();
+    void start(const std::string &host,
+               const std::string &port,
+               const std::string &path);
 
     void stop();
 
@@ -87,7 +89,7 @@ private:
     std::shared_ptr<CallerQueue> m_caller_que;
     std::shared_ptr<DialPlanQueue> m_dialplan_que;
     std::vector<std::shared_ptr<voip::VAccount>> m_acc_vec;
-    std::shared_ptr<IWSSender> m_server_sender;
+    // std::shared_ptr<IWSSender> m_server_sender;
     std::string m_recv_call_type;
     std::string m_call_method;
     std::string m_different;

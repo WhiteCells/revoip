@@ -1,9 +1,8 @@
 #include "server/gui_ws_server.h"
 #include "env.h"
 #include "logger.h"
-#include "io_context_pool.h"
 
-int main(int argc, char *argv[])
+int main()
 {
     Env::instance().load(".env");
 

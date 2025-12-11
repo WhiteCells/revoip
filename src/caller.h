@@ -39,14 +39,14 @@ public:
     void group_call(const std::string &phone,
                     const int dialplan_id,
                     std::shared_ptr<Coordinator> coordinator,
-                    std::shared_ptr<IWSSender> sender,
+                    // std::shared_ptr<IWSSender> sender,
                     const std::string &call_method,
                     const std::string &different);
 
     void single_call(const std::string &phone,
                      const int dialplan_id,
                      std::shared_ptr<Coordinator> coordinator,
-                     std::shared_ptr<IWSSender> sender,
+                     //  std::shared_ptr<IWSSender> sender,
                      const std::string &call_method,
                      const std::string &different);
 

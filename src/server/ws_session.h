@@ -22,10 +22,8 @@ class WebSocketSession :
     public std::enable_shared_from_this<WebSocketSession>
 {
 public:
-    explicit WebSocketSession(tcp::socket &&socket,
-                              std::shared_ptr<WebWsClient> client)
+    explicit WebSocketSession(tcp::socket &&socket)
         : m_stream(std::move(socket))
-        , m_client(client)
     {
     }
     ~WebSocketSession() = default;
@@ -119,6 +117,7 @@ private:
                 handleCommandMessage(root);
             }
             else if (type == "sip_config") {
+                // sip 配置
                 LOG_INFO("recv account info: {}", root.toStyledString());
                 handleAccountMessage(root);
             }
@@ -129,44 +128,29 @@ private:
 
     void handleConfigMessage(const Json::Value &root)
     {
-        if (!root.isMember("host") || !root["host"].isString()) {
-            LOG_ERROR("::host");
-            return;
+        try {
+            m_client.reset();
+            auto host = root["host"].asString();
+            auto port = root["port"].asString();
+            auto route = root["route"].asString();
+            auto client_id = root["client_id"].asString();
+            m_client->start(host, port, route + "/" + client_id);
         }
-
-        if (!root.isMember("port") || !root["port"].isString()) {
-            LOG_ERROR("::port");
-            return;
+        catch (const std::exception &e) {
+            LOG_ERROR("handleConfigMessage: {}", e.what());
         }
-
-        if (!root.isMember("client_id") || !root["client_id"].isString()) {
-            LOG_ERROR("::client_id");
-            return;
-        }
-
-        if (!root.isMember("route") || !root["route"].isString()) {
-            LOG_ERROR("::route");
-            return;
-        }
-
-        // g_gui_cfg.gui_host = root["host"].asString();
-        // g_gui_cfg.gui_port = root["port"].asString();
-        // g_gui_cfg.gui_client_id = root["client_id"].asString();
-        // g_gui_cfg.gui_target = root["route"].asString();
-
-        m_client->restart();
     }
 
     void handleCommandMessage(const Json::Value &root)
     {
-        // endpoint.libRegisterThread("Worker");
+        pj::Endpoint::instance().libRegisterThread("Worker");
         if (root.isMember("action")) {
             std::string action = root["action"].asString();
 
             if (action == "hangup" || action == "close") {
                 // local_hangup = "mediator";
                 // 尝试执行挂断所有呼叫操作
-                // endpoint.hangupAllCalls();
+                pj::Endpoint::instance().hangupAllCalls();
 
                 Json::Value response;
                 response["status"] = "success";
@@ -247,5 +231,4 @@ private:
     http::request<http::string_body> m_req;
     std::queue<std::string> m_write_que;
     std::shared_ptr<WebWsClient> m_client;
-    // std::unique_ptr<Account> m_account;
 };

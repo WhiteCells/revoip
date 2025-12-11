@@ -4,6 +4,7 @@
 #include "../io_context_pool.h"
 #include "../account_check.h"
 #include "../account_check_manager.h"
+#include <pjsua2/endpoint.hpp>
 // #include "request.hpp"
 
 WebWsClient::WebWsClient()
@@ -14,7 +15,7 @@ WebWsClient::WebWsClient()
     m_on_read_handler = [this](const std::string &msg) {
         static thread_local bool pj_thread_registered = false;
         if (!pj_thread_registered) {
-            // endpoint.libRegisterThread("Worker");
+            pj::Endpoint::instance().libRegisterThread("Worker");
             pj_thread_registered = true;
         }
         // AccountCheckManager::getInstance()->clear();
@@ -116,20 +117,20 @@ WebWsClient::WebWsClient()
             const std::string different = root["different"].asString();
             m_different = different;
 
-            if (m_server_sender) {
-                Json::Value account_info;
-                account_info["type"] = "account_info";
-                account_info["task_id"] = task_id;
-                account_info["call_type"] = call_type;
-                account_info["accounts"] = accounts_array;
-                account_info["phones"] = dialplans_array;
+            // if (m_server_sender) {
+            //     Json::Value account_info;
+            //     account_info["type"] = "account_info";
+            //     account_info["task_id"] = task_id;
+            //     account_info["call_type"] = call_type;
+            //     account_info["accounts"] = accounts_array;
+            //     account_info["phones"] = dialplans_array;
 
-                Json::StreamWriterBuilder builder;
-                builder["indentation"] = "";
-                std::string message = Json::writeString(builder, account_info);
-                // m_server_sender->send(message);
-                LOG_INFO("Sent account info to WebSocket: {}", message);
-            }
+            //     Json::StreamWriterBuilder builder;
+            //     builder["indentation"] = "";
+            //     std::string message = Json::writeString(builder, account_info);
+            //     // m_server_sender->send(message);
+            //     LOG_INFO("Sent account info to WebSocket: {}", message);
+            // }
 
             if (call_type == "single") {
                 const std::string id = accounts_array[0]["id"].asString();
@@ -181,10 +182,10 @@ WebWsClient::WebWsClient()
     };
 }
 
-void WebWsClient::set_server_sender(std::shared_ptr<IWSSender> sender)
-{
-    m_server_sender = sender;
-}
+// void WebWsClient::set_server_sender(std::shared_ptr<IWSSender> sender)
+// {
+//     m_server_sender = sender;
+// }
 
 void WebWsClient::set_agent_ws_sender(AgentWsMsgHandler handler)
 {
@@ -193,22 +194,27 @@ void WebWsClient::set_agent_ws_sender(AgentWsMsgHandler handler)
 
 void WebWsClient::restart()
 {
-    stop();
-    start();
+    // stop();
+    // start();
 }
 
-void WebWsClient::start()
+void WebWsClient::start(const std::string &host,
+                        const std::string &port,
+                        const std::string &path)
 {
+    m_host = host;
+    m_port = port;
+    m_target = path;
     auto &ioc = IOContextPool::getInstance()->getIOContext();
     m_resolver = std::make_unique<tcp::resolver>(net::make_strand(ioc));
     m_ssl_ctx = std::make_unique<ssl::context>(ssl::context::tls_client);
     m_ssl_ctx->set_verify_mode(ssl::verify_peer);
     m_ssl_ctx->load_verify_file("backend_verify_file");
     m_ws = std::make_unique<websocket::stream<beast::ssl_stream<beast::tcp_stream>>>(net::make_strand(ioc), *m_ssl_ctx);
-    // m_resolver->async_resolve(g_gui_cfg.gui_host,
-    //                           g_gui_cfg.gui_port,
-    //                           beast::bind_front_handler(&WebWsClient::on_resolver,
-    //                                                     shared_from_this()));
+    m_resolver->async_resolve(host,
+                              port,
+                              beast::bind_front_handler(&WebWsClient::on_resolver,
+                                                        shared_from_this()));
 }
 
 void WebWsClient::stop()
@@ -294,20 +300,22 @@ void WebWsClient::start_call()
 void WebWsClient::single_call(std::shared_ptr<Coordinator> coordinator)
 {
     LOG_INFO("single call");
-    // endpoint.libRegisterThread("Worker");
+    pj::Endpoint::instance().libRegisterThread("Worker");
     auto caller = m_caller_que->getCaller();
     auto dialplan = m_dialplan_que->getDialPlan();
-    caller->single_call(dialplan.second, dialplan.first, coordinator, m_server_sender, m_call_method, m_different);
+    // caller->single_call(dialplan.second, dialplan.first, coordinator, m_server_sender, m_call_method, m_different);
+    caller->single_call(dialplan.second, dialplan.first, coordinator, m_call_method, m_different);
     LOG_INFO("single call over");
 }
 
 void WebWsClient::group_call(std::size_t i, std::shared_ptr<Coordinator> coordinator)
 {
     LOG_INFO("group call index: {}", i);
-    // endpoint.libRegisterThread("Worker");
+    pj::Endpoint::instance().libRegisterThread("Worker");
     auto caller = m_caller_que->getCaller();
     auto dialplan = m_dialplan_que->getDialPlan();
-    caller->group_call(dialplan.second, dialplan.first, coordinator, m_server_sender, m_call_method, m_different);
+    // caller->group_call(dialplan.second, dialplan.first, coordinator, m_server_sender, m_call_method, m_different);
+    caller->group_call(dialplan.second, dialplan.first, coordinator, m_call_method, m_different);
     LOG_INFO("call {} over", dialplan.second);
 }
 

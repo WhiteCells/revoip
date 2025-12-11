@@ -1,0 +1,42 @@
+#pragma once
+
+#include "../singleton.hpp"
+#include <pjsua2.hpp>
+#include <atomic>
+
+// SIP 核心
+// 存储 SIP 账号，以及当前的 SIP 状态（呼叫状态）
+// 负责挂断、转呼
+class SIPCore : public Singleton<SIPCore>
+{
+    friend class Singleton<SIPCore>;
+
+public:
+    enum class State {
+        IDLE,    // 空闲状态
+        CALLING, // 呼叫状态
+        HANGUP,  // 挂断状态
+    };
+    ~SIPCore() = default;
+
+    SIPCore::State getState() const { return m_state; }
+    void setState(State state) { m_state.store(state); }
+    void registerAccount(const pj::Account &acc) { m_account = acc; }
+    void unRegisterAccount() { m_account = pj::Account(); }
+    bool isAccountRegistered() const { return m_account.isValid(); }
+    void hangup()
+    {
+        pj::Endpoint::instance().libRegisterThread("sip_core_hangup");
+        if (m_state == State::CALLING) {
+            pj::Endpoint::instance().hangupAllCalls();
+            setState(State::HANGUP);
+        }
+    }
+
+private:
+    SIPCore() = default;
+
+private:
+    std::atomic<SIPCore::State> m_state {State::IDLE};
+    pj::Account m_account;
+};

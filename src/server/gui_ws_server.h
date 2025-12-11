@@ -9,21 +9,18 @@
 #include <boost/asio.hpp>
 #include <boost/asio/steady_timer.hpp>
 #include <json/json.h>
-#include <queue>
 #include <unordered_set>
-#include <functional>
 #include <string>
 
+namespace net = boost::asio;
+
 class GuiWsServer
-// : public IWSSender
 {
 public:
-    GuiWsServer(const std::string &addr,
-                unsigned int port,
-                std::shared_ptr<WebWsClient> client)
-        : m_acceptor(IOContextPool::getInstance()->getIOContext())
-        , m_endpoint(asio::ip::make_address(addr), port)
-        // , m_client(client)
+    GuiWsServer(net::io_context &ioc, const std::string &addr,
+                unsigned int port)
+        : m_acceptor(ioc)
+        , m_endpoint(net::ip::make_address(addr), port)
     {
         beast::error_code ec;
         if (m_acceptor.open(m_endpoint.protocol(), ec)) {
@@ -45,15 +42,6 @@ public:
         do_accept();
     }
 
-    // ws server 发送
-    // virtual void send(const std::string &msg) override
-    // {
-    //     std::unique_lock<std::mutex> lock(m_sessions_mtx);
-    //     for (const auto &session : m_sessions) {
-    //         session->send(msg);
-    //     }
-    // }
-
 private:
     void do_accept()
     {
@@ -61,7 +49,7 @@ private:
             if (ec) {
                 LOG_ERROR("async_accept: {}", ec.what());
             }
-            auto session = std::make_shared<WebSocketSession>(std::move(socket), m_client);
+            auto session = std::make_shared<WebSocketSession>(std::move(socket));
             {
                 std::unique_lock<std::mutex> lock(m_sessions_mtx);
                 m_sessions.insert(session);
@@ -73,7 +61,6 @@ private:
 
     tcp::acceptor m_acceptor;
     tcp::endpoint m_endpoint;
-    std::shared_ptr<WebWsClient> m_client;
     std::unordered_set<std::shared_ptr<WebSocketSession>> m_sessions;
     std::mutex m_sessions_mtx;
 };

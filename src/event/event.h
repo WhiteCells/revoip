@@ -9,9 +9,12 @@
 #include <algorithm>
 #include <atomic>
 #include "../thread_pool.h"
+#include "../singleton.hpp"
 
-class EventBus
+class EventBus : public Singleton<EventBus>
 {
+    friend class Singleton<EventBus>;
+
 public:
     struct Subscription
     {
@@ -28,8 +31,7 @@ public:
 
     using SubscriptionPtr = std::shared_ptr<Subscription>;
 
-    explicit EventBus(size_t threadCount = 4) :
-        m_pool(threadCount) {}
+    explicit EventBus(size_t threadCount = 4) : m_pool(threadCount) {}
     ~EventBus() = default;
 
     template <typename Event, typename Func>

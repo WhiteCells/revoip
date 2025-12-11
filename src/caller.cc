@@ -20,13 +20,13 @@ voip::Caller::~Caller()
 void voip::Caller::group_call(const std::string &phone,
                               const int dialplan_id,
                               std::shared_ptr<Coordinator> coordinator,
-                              std::shared_ptr<IWSSender> sender,
+                              //   std::shared_ptr<IWSSender> sender,
                               const std::string &call_method,
                               const std::string &different)
 {
     call_type = "group";
     m_coordinator = coordinator;
-    m_sender = sender;
+    // m_sender = sender;
     m_dialplan_id = dialplan_id;
     m_phone = phone;
     m_call_method = call_method;
@@ -79,13 +79,13 @@ void voip::Caller::group_call(const std::string &phone,
 void voip::Caller::single_call(const std::string &phone,
                                const int dialplan_id,
                                std::shared_ptr<Coordinator> coordinator,
-                               std::shared_ptr<IWSSender> sender,
+                               //    std::shared_ptr<IWSSender> sender,
                                const std::string &call_method,
                                const std::string &different)
 {
     call_type = "single";
     m_coordinator = coordinator;
-    m_sender = sender;
+    // m_sender = sender;
     m_dialplan_id = dialplan_id;
     m_phone = phone;
     m_call_method = call_method;
@@ -320,7 +320,7 @@ void voip::Caller::onCallMediaState(pj::OnCallMediaStateParam &prm)
     auto cap_dev_med = mgr.getCaptureDevMedia();
     auto play_dev_med = mgr.getPlaybackDevMedia();
     cap_dev_med.adjustRxLevel(2.0);
-    play_dev_med.adjustTxLevel(2.0);
+    play_dev_med.adjustRxLevel(2.0);
 
     for (unsigned i = 0; i < ci.media.size(); ++i) {
         if (ci.media[i].type == PJMEDIA_TYPE_AUDIO) {
