@@ -2,11 +2,12 @@
 
 #include "../coordinator.h"
 #include "../thread_pool.h"
-#include "../vaccount.h"
-#include "../caller_queue.h"
-#include "../dialplan_queue.h"
+// #include "../vaccount.h"
+// #include "../caller_queue.h"
+// #include "../dialplan_queue.h"
 // #include "ws_interface.h"
 // #include "../agent_ws_client.h"
+#include "../event/event.h"
 #include <boost/beast/ssl.hpp>
 #include <boost/asio/ssl.hpp>
 #include <boost/beast.hpp>
@@ -86,9 +87,9 @@ private:
     std::size_t m_worker_num;
     ThreadPool m_thread_pool;
 
-    std::shared_ptr<CallerQueue> m_caller_que;
-    std::shared_ptr<DialPlanQueue> m_dialplan_que;
-    std::vector<std::shared_ptr<voip::VAccount>> m_acc_vec;
+    // std::shared_ptr<CallerQueue> m_caller_que;
+    // std::shared_ptr<DialPlanQueue> m_dialplan_que;
+    // std::vector<std::shared_ptr<voip::VAccount>> m_acc_vec;
     // std::shared_ptr<IWSSender> m_server_sender;
     std::string m_recv_call_type;
     std::string m_call_method;

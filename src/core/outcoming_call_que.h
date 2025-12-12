@@ -1,25 +1,26 @@
 #pragma once
 
-#include "caller.h"
+#include "outcoming_call.h"
 #include <boost/asio.hpp>
 #include <queue>
 #include <mutex>
 #include <memory>
 #include <condition_variable>
 
-/**
- * @brief 呼叫者队列
- * 线程安全
- */
-class CallerQueue
+// 外呼队列
+class OutcomingCallQue
 {
-    using CallerSPtr = std::shared_ptr<voip::Caller>;
+    using CallerSPtr = std::shared_ptr<OutcomingCall>;
 
 public:
-    CallerQueue();
-    CallerQueue(const CallerQueue &) = delete;
-    CallerQueue &operator=(const CallerQueue &) = delete;
-    ~CallerQueue();
+    OutcomingCallQue()
+    {
+    }
+    OutcomingCallQue(const OutcomingCallQue &) = delete;
+    OutcomingCallQue &operator=(const OutcomingCallQue &) = delete;
+    ~OutcomingCallQue()
+    {
+    }
 
     void addCaller(CallerSPtr caller);
     CallerSPtr getCaller();
@@ -33,5 +34,5 @@ private:
     mutable std::mutex m_que_mtx;
     std::condition_variable m_que_cv;
     std::atomic_bool m_fetching;
-    std::vector<std::shared_ptr<voip::VAccount>> m_acc;
+    // std::vector<std::shared_ptr<voip::VAccount>> m_acc;
 };

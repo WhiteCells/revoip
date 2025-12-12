@@ -1,5 +1,7 @@
 #pragma once
 
+#include "../thread_pool.h"
+#include "../singleton.hpp"
 #include <functional>
 #include <vector>
 #include <unordered_map>
@@ -8,8 +10,6 @@
 #include <memory>
 #include <algorithm>
 #include <atomic>
-#include "../thread_pool.h"
-#include "../singleton.hpp"
 
 class EventBus : public Singleton<EventBus>
 {

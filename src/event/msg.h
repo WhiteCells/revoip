@@ -43,3 +43,28 @@ struct LLMTextMsg : public Msg
 
     std::string m_text;
 };
+
+// 挂断事件
+struct HangupEvent : public Msg
+{
+    explicit HangupEvent()
+    {
+    }
+};
+
+// 接听事件
+struct AnswerEvent : public Msg
+{
+    explicit AnswerEvent()
+    {
+    }
+};
+
+// Outcoming 事件
+struct OutcomingEvent : public Msg
+{
+    explicit OutcomingEvent()
+    {
+    }
+    std::string m_msg;
+};
